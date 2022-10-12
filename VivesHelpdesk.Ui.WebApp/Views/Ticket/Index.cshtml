@@ -1,0 +1,22 @@
+﻿@model IList<Ticket>
+
+<h1>Manage Tickets</h1>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Created</th>
+        <th>Title</th>
+        <th>Author</th>
+    </tr>
+    </thead>
+    <tbody>
+        @foreach (var ticket in Model)
+        {
+            <tr>
+                <td>@ticket.CreatedDate.ToLocalTime().ToString("d t")</td>
+                <td>@ticket.Title</td>
+                <td>@ticket.Author</td>
+            </tr>
+        }
+    </tbody>
+</table>
